@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    :author: Grey Li (李辉)
-    :url: http://greyli.com
-    :copyright: © 2018 Grey Li <withlihui@gmail.com>
-    :license: MIT, see LICENSE for more details.
+    :author: LRabbit
 """
 from flask import render_template, flash, redirect, url_for, request, current_app, Blueprint, abort, make_response
 from flask_login import current_user
@@ -18,7 +15,7 @@ from bluelog.utils import redirect_back
 #创建蓝图
 blog_bp = Blueprint('blog', __name__)
 
-#创建蓝图路由
+# 创建蓝图路由
 @blog_bp.route('/')
 def index():
     page = request.args.get('page', 1, type=int)
@@ -26,7 +23,6 @@ def index():
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)
     posts = pagination.items
     return render_template('blog/index.html', pagination=pagination, posts=posts)
-
 
 @blog_bp.route('/about')
 def about():
@@ -106,5 +102,6 @@ def change_theme(theme_name):
     response = make_response(redirect_back())
     response.set_cookie('theme', theme_name, max_age=30 * 24 * 60 * 60)
     return response
+
 
 
