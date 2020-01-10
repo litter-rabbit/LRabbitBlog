@@ -12,17 +12,6 @@ class Weather:
         pass
 
 
-    def getlocation(self,ip):
-
-        # 获取地址
-        taobaoAPI = 'http://ip.taobao.com/service/getIpInfo.php?ip='
-        ip = '121.199.4.165'
-        url = taobaoAPI + ip
-        f = urllib.request.urlopen(url).read().decode()
-        location = json.loads(f)
-        location_province = location['data']['region']
-        location_city = location['data']['city']
-        return location_province,location_city
 
     def getcitycode(self):
 
@@ -36,14 +25,26 @@ class Weather:
         API='http://www.weather.com.cn/weather1d/%s.shtml' %codestr
         content=self.getContent(API)
         wea=re.search('<p class="wea" title="(.*)</p>',content)
-        print(str(wea))
-
-
+        wea=repr(wea)
+        return wea
 
 
     def getContent(self,url):
         return urllib.request.urlopen(url).read().decode()
 
+
+
+def getlocation(ip):
+
+    # 获取地址
+    taobaoAPI = 'http://ip.taobao.com/service/getIpInfo.php?ip='
+    ip = '121.199.4.165'
+    url = taobaoAPI + ip
+    f = urllib.request.urlopen(url).read().decode()
+    location = json.loads(f)
+    location_province = location['data']['region']
+    location_city = location['data']['city']
+    return location_province,location_city
 
 
 if __name__=='__main__':

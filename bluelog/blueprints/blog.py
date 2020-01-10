@@ -11,34 +11,25 @@ from bluelog.forms import CommentForm, AdminCommentForm
 from bluelog.models import Post, Category, Comment
 from bluelog.utils import redirect_back
 
+from bluelog import weather
 
-#创建蓝图
+# 创建蓝图
 blog_bp = Blueprint('blog', __name__)
 
 
-
 @blog_bp.before_app_first_request
-def getlocation():
+def weather():
+    province, city = weather.getlocation(request.remote_addr)
+    w = weather.Weather(city)
+    wea = w.getWeather()
+    if '雨' in wea:
+        current_app.config['WHEATHER_RAIN'] = True
 
+    if '雷' in wea:
+        current_app.config['WHEATHER_THUNDER'] = True
 
-    # 获取天气
-
-    from urllib.parse import quote
-    cityname=quote(location_city,'utf-8')
-    r=urllib.request.urlopen('http://toy1.weather.com.cn/search?cityname=%s'%cityname)
-
-    citycodestr=r.read().decode()
-
-
-
-
-
-
-
-
-
-
-
+    if '雪' in wea:
+        current_app.config['WHEATHER_SNOW'] = True
 
 
 # 创建蓝图路由
@@ -49,6 +40,7 @@ def index():
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)
     posts = pagination.items
     return render_template('blog/index.html', pagination=pagination, posts=posts)
+
 
 @blog_bp.route('/about')
 def about():
@@ -128,6 +120,3 @@ def change_theme(theme_name):
     response = make_response(redirect_back())
     response.set_cookie('theme', theme_name, max_age=30 * 24 * 60 * 60)
     return response
-
-
-
