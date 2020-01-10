@@ -34,25 +34,17 @@ class Weather:
 
 
 
+
 def getlocation(ip):
 
     # 获取地址
     taobaoAPI = 'http://ip.taobao.com/service/getIpInfo.php?ip='
-    ip = '121.199.4.165'
     url = taobaoAPI + ip
     f = urllib.request.urlopen(url).read().decode()
     location = json.loads(f)
     location_province = location['data']['region']
     location_city = location['data']['city']
     return location_province,location_city
-
-
-if __name__=='__main__':
-
-    w=Weather('杭州')
-    w.getWeather()
-
-
 
 
 

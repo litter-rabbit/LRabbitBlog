@@ -18,10 +18,13 @@ blog_bp = Blueprint('blog', __name__)
 
 
 @blog_bp.before_app_first_request
-def weather():
+def defineweather():
+
     province, city = weather.getlocation(request.remote_addr)
     w = weather.Weather(city)
+    print(city)
     wea = w.getWeather()
+    print(wea)
     if '雨' in wea:
         current_app.config['WHEATHER_RAIN'] = True
 
