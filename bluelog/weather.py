@@ -30,16 +30,12 @@ class Weather:
         codestr=self.getContent(API)
         codestr=codestr[10:19]
         return codestr
-
-
     def getWeather(self):
 
         codestr=self.getcitycode()
         API='http://www.weather.com.cn/weather1d/%s.shtml' %codestr
         content=self.getContent(API)
         wea=re.search('<p class="wea" title="(.*)</p>',content)
-
-
         print(str(wea))
 
 
@@ -47,11 +43,6 @@ class Weather:
 
     def getContent(self,url):
         return urllib.request.urlopen(url).read().decode()
-
-
-
-
-
 
 
 
