@@ -15,6 +15,32 @@ from bluelog.utils import redirect_back
 #创建蓝图
 blog_bp = Blueprint('blog', __name__)
 
+
+
+@blog_bp.before_app_first_request
+def getlocation():
+
+
+    # 获取天气
+
+    from urllib.parse import quote
+    cityname=quote(location_city,'utf-8')
+    r=urllib.request.urlopen('http://toy1.weather.com.cn/search?cityname=%s'%cityname)
+
+    citycodestr=r.read().decode()
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 创建蓝图路由
 @blog_bp.route('/')
 def index():
