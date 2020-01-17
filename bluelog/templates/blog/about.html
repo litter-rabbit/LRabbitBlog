@@ -1,14 +1,46 @@
 {% extends 'base.html' %}
 
+
 {% block title %}About{% endblock %}
 
 {% block content %}
+    <script>
+        window.onload=function () {
+
+
+        }
+    </script>
+
+
     <div class="index-page-header">
-        <h1>About</h1>
+        <h1>About Me</h1>
+
     </div>
     <div class="row">
         <div class="col-sm-8">
             {{ admin.about|safe }}
+            <div class="poem">
+                <p> 你可不可以<br>
+                成为我的main函数<br>
+                做我此生必须有<br>
+                且只能有一个的入口<br>
+                ——————————<br>
+                我愿为自己加上private<br>
+                在你的class中只有<br>
+                你能调用<br>
+                                        ——————————————代 码 如 诗 。</p>
+            </div>
+            <div class="biubiubiu">
+                <div class="biu-avatar">
+                    <img src="{{ url_for('static',filename='img/takagi.jpg') }}">
+
+                </div>
+
+                <div class="biu-text">
+                    <p>好看<span>の</span>皮囊千篇一律</p>
+                    <p>有趣<span>の</span>灵魂万里挑一</p>
+                </div>
+            </div>
         </div>
         <div class="col-sm-4 sidebar">
             {% include "blog/_sidebar.html" %}

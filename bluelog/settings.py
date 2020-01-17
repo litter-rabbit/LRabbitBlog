@@ -46,8 +46,8 @@ class BaseConfig(object):
 
     # 天气相关设置相关
     WHEATHER_RAIN=False
-    WHEATHER_PROVICE=None
-    WHEATHER_CITY=None
+    WHEATHER_THUNDER=False
+    WHEATHER_SNOW=False
 
 
 
