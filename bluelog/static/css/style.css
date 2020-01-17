@@ -60,6 +60,9 @@ img {
     display: inline-block;
     margin: 0 5px;
 }
+
+
+
 @keyframes face{
 
     2% {
@@ -667,36 +670,58 @@ footer {
   z-index: 100;
 }
 
-/*@-webkit-keyframes thunder-bg {*/
-/*  0% {*/
-/*    background-color: rgba(34, 34, 34, 0.9);*/
-/*  }*/
-/*  9% {*/
-/*    background-color: rgba(34, 34, 34, 0.9);*/
-/*  }*/
-/*  10% {*/
-/*    background-color: rgba(59, 59, 59, 0.3);*/
-/*  }*/
-/*  10.5% {*/
-/*    background-color: rgba(34, 34, 34, 0.9);*/
-/*  }*/
-/*  80% {*/
-/*    background-color: rgba(34, 34, 34, 0.9);*/
-/*  }*/
-/*  82% {*/
-/*    background-color: rgba(59, 59, 59, 0.3);*/
-/*  }*/
-/*  83% {*/
-/*    background-color: rgba(34, 34, 34, 0.9);*/
-/*  }*/
-/*  83.5% {*/
-/*    background-color: rgba(59, 59, 59, 0.3);*/
-/*  }*/
-/*  100% {*/
-/*    background-color: rgba(34, 34, 34, 0.9);*/
-/*  }*/
-/*}*/
 
 
-/*thunder block*/
+/*about*/
+
+.biubiubiu{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 300px;
+    height: 500px;
+    background: rgba(246,208,195,0.8);;
+
+}
+
+.biu-avatar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 5px;
+
+}
+
+.biu-text p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.biu-text p:nth-of-type(1){
+    color: red;
+    font-weight: 600;
+    font-family: "Apple Color Emoji";
+
+}
+
+
+.biu-text p:nth-of-type(2){
+    color: blue;
+    font-weight: 600;
+    font-family: "Apple Color Emoji";
+}
+
+
+.biu-text p:nth-of-type(1) span{
+    color:rgba(111,243,176,1);
+
+
+}
+
+.biu-text p:nth-of-type(2) span{
+    color:red
+
+}
 
