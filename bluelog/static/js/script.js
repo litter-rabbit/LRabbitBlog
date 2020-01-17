@@ -37,3 +37,16 @@ ap1 = new APlayer({
 	}]
 });
 
+//click me
+
+biu_click=document.getElementById('click-me')
+biu_toclick=document.getElementsByClassName('biu-toclick')[0]
+biu_toclick.addEventListener('click',function () {
+		img=document.createElement('img')
+		img.src='static/img/biu.gif'
+		biu_toclick.removeChild(biu_click)
+		biu_toclick.appendChild(img)
+		biu_click.firstChild.textContent=''
+
+})
+

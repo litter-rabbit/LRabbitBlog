@@ -681,7 +681,8 @@ footer {
     display: inline-block;
     width: 300px;
     height: 500px;
-    background: rgba(246,208,195,0.8);;
+    background: rgba(246,208,195,0.8);
+    border-radius: 10px;
 
 }
 
@@ -723,5 +724,27 @@ footer {
 .biu-text p:nth-of-type(2) span{
     color:red
 
+}
+.biu-toclick p{
+    color: greenyellow;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 120px;
+    animation: face 5s infinite ease-in-out;
+}
+.biu-toclick img{
+    margin-top: 0;
+}
+
+.poem span:nth-of-type(1){
+    color: red;
+}
+
+.poem span:nth-of-type(2){
+    color: deeppink;
+}
+.poem span:nth-of-type(3){
+    color: cornflowerblue;
 }
 
