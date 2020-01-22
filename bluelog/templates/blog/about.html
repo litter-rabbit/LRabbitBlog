@@ -4,29 +4,32 @@
 {% block title %}About{% endblock %}
 
 {% block content %}
-    <script>
-        window.onload=function () {
-
-
-        }
-    </script>
-
-
-    <div class="index-page-header">
-        <h1>About Me</h1>
-
+    <div id="about-me" class="index-page-header">
+        <h1>关于我</h1>
+        <span class="sign1">(羞耻度max的个人介绍)</span>
+        <span class="sign2">健康 快乐 自信</span>
+        <span class="sign3">知足且上进，温柔而坚定</span>
+        <span class="sign4">国际公认黑眼圈界达人</span>
+        <span class="sign5">社会主义接班人</span>
+        <span class="sign6">耳机依赖患者</span>
+        <span class="sign7">2016年江西省高考状元<small>老乡</small></span>
+        <span class="sign8">想你,但不會找你</span>
+        <span class="sign9">一心一意是这个世界上最温柔的力量</span>
+        <span class="sign10">月色真美</span>
+        <span class="sign11">精通各种编程语言的<samll>安装与卸载</samll></span>
+        <span class="sign12">Python</span>
     </div>
     <div class="row">
         <div class="col-sm-8">
             {{ admin.about|safe }}
             <div class="poem">
                 <p> 你可不可以<br>
-                成为我的main函数<br>
+                成为我的<span>main</span>函数<br>
                 做我此生必须有<br>
                 且只能有一个的入口<br>
                 ——————————<br>
-                我愿为自己加上private<br>
-                在你的class中只有<br>
+                    我愿为自己加上<span>private</span><br>
+                在你的<span>class</span>中只有<br>
                 你能调用<br>
                                         ——————————————代 码 如 诗 。</p>
             </div>
@@ -40,6 +43,10 @@
                     <p>好看<span>の</span>皮囊千篇一律</p>
                     <p>有趣<span>の</span>灵魂万里挑一</p>
                 </div>
+                <div class="biu-toclick">
+                    <p id="click-me">点我一下</p>
+                </div>
+
             </div>
         </div>
         <div class="col-sm-4 sidebar">

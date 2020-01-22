@@ -5,6 +5,23 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip(
         {title: render_time}
     );
+
+
+    var OriginTitile = document.title;
+	var titleTime;
+	document.addEventListener('visibilitychange', function() {
+		if (document.hidden) {
+			document.title = '(つェ⊂)看不到我~ ' + OriginTitile;
+			clearTimeout(titleTime);
+		}
+		else {
+			document.title = '(*´∇｀*) 又在想我啦~ ' + OriginTitile;
+			titleTime = setTimeout(function() {
+				document.title = OriginTitile;
+			}, 2000);
+		}
+});
+
 });
 
 //音乐播放器
@@ -36,4 +53,22 @@ ap1 = new APlayer({
 		theme: '#505d6b'
 	}]
 });
+
+//click me
+
+biu_click=document.getElementById('click-me')
+biu_toclick=document.getElementsByClassName('biu-toclick')[0]
+biu_toclick.addEventListener('click',function () {
+		img=document.createElement('img')
+		img.src='static/img/biu.gif'
+		biu_toclick.removeChild(biu_click)
+		biu_toclick.appendChild(img)
+		biu_click.firstChild.textContent=''
+
+})
+
+//网页标签
+
+
+
 
