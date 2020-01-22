@@ -8,10 +8,10 @@ from flask import render_template, flash, redirect, url_for, request, current_ap
 from flask_login import login_required, current_user
 from flask_ckeditor import upload_success, upload_fail
 
-from bluelog.extensions import db
-from bluelog.forms import SettingForm, PostForm, CategoryForm, LinkForm
-from bluelog.models import Post, Category, Comment, Link
-from bluelog.utils import redirect_back, allowed_file
+from lrabbitblog.extensions import db
+from lrabbitblog.forms import SettingForm, PostForm, CategoryForm, LinkForm
+from lrabbitblog.models import Post, Category, Comment, Link
+from lrabbitblog.utils import redirect_back, allowed_file
 
 admin_bp = Blueprint('admin', __name__)
 
