@@ -11,28 +11,11 @@ from lrabbitblog.forms import CommentForm, AdminCommentForm
 from lrabbitblog.models import Post, Category, Comment
 from lrabbitblog.utils import redirect_back
 
-from lrabbitblog import weather
 
 # 创建蓝图
 blog_bp = Blueprint('blog', __name__)
 
 
-@blog_bp.before_app_first_request
-def defineweather():
-
-    province, city = weather.getlocation(request.remote_addr)
-    w = weather.Weather(city)
-    print(city)
-    wea = w.getWeather()
-    print(wea)
-    if '雨' in wea:
-        current_app.config['WHEATHER_RAIN'] = True
-
-    if '雷' in wea:
-        current_app.config['WHEATHER_THUNDER'] = True
-
-    if '雪' in wea:
-        current_app.config['WHEATHER_SNOW'] = True
 
 
 # 创建蓝图路由
