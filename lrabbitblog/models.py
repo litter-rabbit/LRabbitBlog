@@ -69,6 +69,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
     post = db.relationship('Post', back_populates='comments')
+
     replies = db.relationship('Comment', back_populates='replied', cascade='all, delete-orphan')
     replied = db.relationship('Comment', back_populates='replies', remote_side=[id])
     # Same with:

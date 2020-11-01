@@ -10,17 +10,13 @@ from lrabbitblog.extensions import db
 from lrabbitblog.forms import CommentForm, AdminCommentForm
 from lrabbitblog.models import Post, Category, Comment
 from lrabbitblog.utils import redirect_back
-
-
 # 创建蓝图
 blog_bp = Blueprint('blog', __name__)
 
 
-
-
-# 创建蓝图路由
 @blog_bp.route('/')
 def index():
+
     page = request.args.get('page', 1, type=int)
     per_page = current_app.config['BLUELOG_POST_PER_PAGE']
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)

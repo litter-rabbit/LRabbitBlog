@@ -24,14 +24,14 @@
             {{ admin.about|safe }}
             <div class="poem">
                 <p> 你可不可以<br>
-                成为我的<span>main</span>函数<br>
-                做我此生必须有<br>
-                且只能有一个的入口<br>
-                ——————————<br>
+                    成为我的<span>main</span>函数<br>
+                    做我此生必须有<br>
+                    且只能有一个的入口<br>
+                    ——————————<br>
                     我愿为自己加上<span>private</span><br>
-                在你的<span>class</span>中只有<br>
-                你能调用<br>
-                                        ——————————————代 码 如 诗 。</p>
+                    在你的<span>class</span>中只有<br>
+                    你能调用<br>
+                    ——————————————代 码 如 诗 。</p>
             </div>
             <div class="biubiubiu">
                 <div class="biu-avatar">
@@ -53,4 +53,17 @@
             {% include "blog/_sidebar.html" %}
         </div>
     </div>
+
+    <script>
+        biu_click = document.getElementById('click-me')
+        biu_toclick = document.getElementsByClassName('biu-toclick')[0]
+        biu_toclick.addEventListener('click', function () {
+            img = document.createElement('img')
+            img.src = 'static/img/biu.gif'
+            biu_toclick.removeChild(biu_click)
+            biu_toclick.appendChild(img)
+            biu_click.firstChild.textContent = ''
+
+        })
+    </script>
 {% endblock %}

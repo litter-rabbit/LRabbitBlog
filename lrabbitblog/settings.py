@@ -44,10 +44,6 @@ class BaseConfig(object):
     BLUELOG_UPLOAD_PATH = os.path.join(basedir, 'uploads')
     BLUELOG_ALLOWED_IMAGE_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
 
-    # 天气相关设置相关
-    WHEATHER_RAIN=False
-    WHEATHER_THUNDER=False
-    WHEATHER_SNOW=False
 
 
 
